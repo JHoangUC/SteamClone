@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Steem</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/discussions.css">
+  </head>
+  <body>
+    <div class="everything">
+      <div class="navbarLogo">
+        <img id="logo" src="/images/asdf.png" alt="">
+    </div>
+    <div class="navbar">
+        <div class="navbarLinks"><a href="/">Home</a></div>
+        <div class="navbarLinks" id="login"><a href="/login">Login</a></div>
+        <div class="navbarLinks" id="signup"><a href="/signup">Signup</a></div>
+        <div class="navbarLinks" id="logout" style="display: none;"><a href="/logout">Logout</a></div>
+        <div class="navbarLinks"><a href="/friends">Friends</a></div>
+    </div>
+    <div class="content">
+      <div class="themedContainerHeader">
+         <h2>Discussions</h2>
+       </div>
+       <div class="themedContainer">
+         <div class="discussionsText" id="discussionsText">
+         </div>
+         <div class="inputText">
+          <form action="">
+            <input type="text" id="message" autocomplete="off" name=""autocorrect="off" autocapitalize="off" spellcheck="false">
+          </form>
+         </div>
+       </div>
+      </div>
+    </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.slim.js"></script>
+    <script type="text/javascript" src="/js/discussions.js"></script>
+  </body>
+</html>

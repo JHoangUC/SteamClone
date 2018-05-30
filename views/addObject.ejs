@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--   -->
+<html>
+  <head>
+    <title>Games</title>
+    <meta charset="utf-8"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/addItem.css">
+  </head>
+
+  <body>
+    <div class="form">
+      <form action="fileupload" method="post" enctype="multipart/form-data">
+      <input type="text" id="name" maxlength="20" required placeholder="Enter a name" name='name'>
+      <br>
+      <input type="number" name="price" required max="1000000000" maxlength="7" id='price' placeholder="Enter a price" min='0'>
+      <br>
+      <input id="fileStuff" type="file" required name="filetoupload">
+      <label for="fileStuff" id="fileStuffLabel">Choose an image</label>
+      <br>
+      <textarea id="description" name="description" placeholder="Enter Description" maxlength="2000"></textarea>
+      <input type="submit" id="submit">
+      <label for="submit" id="submitLabel">Submit</label>
+      </form>
+    </div>
+
+  <script src="js/newItem.js"></script>
+
+  </body>
+</html>

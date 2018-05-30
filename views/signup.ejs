@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Steem</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/login.css">
+  </head>
+  <body>
+    <div class="everything">
+      <a href="/" id="steem"><img id="logo" src="/images/asdf.png" alt=""></a>
+      <form action="/signup" method="POST">
+        <label for="username">Username:</label>
+        <input id="username" type="text" name="username" autocomplete="off" spellcheck="false">
+        <label for="password">Password:</label>
+        <input id="password" type="password" name="password" autocomplete="off" spellcheck="false">
+        <label for="password2">Retype Password:</label>
+        <input id="password2" type="password" name="password2" autocomplete="off" spellcheck="false">
+      </form>
+      <p id="text"></p>
+      <a href="/login">Login Here</a>
+    </div>
+    <script type="text/javascript" src="/js/signup.js"></script>
+  </body>
+</html>
