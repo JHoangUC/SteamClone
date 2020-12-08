@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Steem</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/homepage.css">
+  </head>
+  <body>
+    <div class="everything">
+      <div class="navbarLogo">
+        <img id="logo" src="/images/asdf.png" alt="">
+      </div>
+      <div class="navbar">
+        <div class="navbarLinks"><a href="/">Home</a></div>
+        <div class="navbarLinks" id="login"><a href="/login">Login</a></div>
+        <div class="navbarLinks" id="signup"><a href="/signup">Signup</a></div>
+        <div class="navbarLinks" id="discus" style="display: none;"><a href="/discussions">Discussions</a></div>
+        <div class="navbarLinks" id="logout" style="display: none;"><a href="/logout">Logout</a></div>
+        <div class="navbarLinks" id="friends" style="display: none;"><a href="/friends">Friends</a></div>
+        <div class="navbarLinks" id="addGame" style="display: none;"><a href="/games">Add Game</a></div>
+        <div class="navbarLinks" id="cart" style="display: none;"><a href="/cart">Cart</a></div>
+      </div>
+      <div class="content">
+        <div class="themedContainerHeader">
+          <h2>Featured Games</h2>
+        </div>
+        <div class="themedContainer">
+          <div class="slideshow-container">
+            <div class="mySlides fade">
+              <a target="_blank" href = "https://store.steampowered.com/app/252950/Rocket_League/"><img src="/images/RocketLeague.jpg"></a>
+            </div>
+
+            <div class="mySlides fade">
+              <a target="_blank" href = "https://store.steampowered.com/app/578080/PLAYERUNKNOWNS_BATTLEGROUNDS/"><img src="/images/PUBG.jpg">
+            </div>
+
+            <div class="mySlides fade">
+              <a target="_blank" href = "https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/"><img src="/images/CSGO.jpg">
+            </div>
+
+            <div class="mySlides fade">
+              <a target="_blank" href = "https://store.steampowered.com/app/413150/Stardew_Valley/"><img src="/images/StarDewValley.jpg">
+            </div>
+
+            <div class="mySlides fade">
+              <a target="_blank" href = "https://store.steampowered.com/app/242760/The_Forest/"><img src="/images/TheForest.jpg">
+            </div>
+
+            <div class="mySlides fade">
+              <a target="_blank" href = "https://store.steampowered.com/app/201790/Orcs_Must_Die_2/"><img src="/images/ORCS.jpg">
+            </div>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+                  <div style="text-align:center; margin-top: 8px;">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+          </div>
+    </div>
+    
+    </div>
+      <div class="allItems">
+        
+        
+      </div>
+
+    <script type="text/javascript" src="/js/homepage.js"></script>
+        <script src="public/js/cart.js"></script>
+  </body>
+</html>

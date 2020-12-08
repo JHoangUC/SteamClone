@@ -1,0 +1,73 @@
+*{
+	box-sizing: border-box;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	background-color: #F7DBA7;
+	overflow: hidden;
+	height: 100vh;
+	width: 100vw;
+	font-size: 20px;
+}
+
+input{
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	width: 100%;
+	display: block;
+	border: none;
+	border-bottom: 1px solid black;
+	padding: 8px;
+	background-color: #F7DBA7;
+
+}
+input:focus{
+	outline: none;
+}
+.form{
+	min-width: 400px;
+	float: left;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+#fileStuff{
+	display: none;
+}
+#fileStuffLabel{
+	text-align: center;
+	width: 100%;
+	padding: 8px;
+	background-color: #a87150;
+	color: white;
+	display: block;
+}
+
+#description{
+	height: 200px;
+	resize: none; 
+	width: 100%;
+	padding: 8px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	border: none;
+}
+#description:focus{
+	outline: none;
+}
+#submit{
+	display: none;	
+}
+#submitLabel{
+	margin-top: 20px;
+	width: 100%;
+	display: block;
+	background-color: #a87150;
+	text-align: center;
+	padding: 8px;
+	color: white;
+}

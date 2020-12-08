@@ -1,0 +1,112 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	background-color: #F7DBA7;
+	color: white;
+	box-sizing: border-box;
+	font-size: 18px;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #d79268; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #a87150; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a87150; 
+}
+h1,h2,h3,h4,h5,h6{
+	font-weight: normal;
+}
+.navbarLogo{
+	max-width: 150px;
+	max-height: 150px;
+}
+#logo{
+	width: 100%;
+	/* 50FFB1 */
+}
+#message{
+	border: none;
+	/*border: solid 1px #a87150;*/
+	padding: 6px;
+	border-radius: 0px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+}
+#message:focus{
+	outline: none;
+}
+.everything{
+	max-width: 800px;
+	margin: 0 auto;
+}
+.content{
+	margin-top: 10px;
+}
+.themedContainer{
+	padding: 8px;
+	background-color: #d79268;
+}
+.themedContainerHeader{
+	background-color: #a87150;
+	padding: 8px;
+}
+.themedContainerHeader h2{
+	text-align: center;
+	margin: 0;
+}
+.discussionsText{
+	height: 400px;
+	overflow: auto;
+	margin-bottom: 8px;
+}
+.discussionsText p{
+	margin: 0;
+	display: block;
+}
+hr{
+	border: 0.5px solid #a87150;
+	/*width: 70%;*/
+	position: relative;
+	/*left: -30%;*/
+	display: block;
+}
+.navbar{
+	height: 38.52px;
+	overflow: visible;
+	box-sizing: border-box;
+}
+.navbarLinks{
+	float: left;
+	background-color: #d79268;
+	padding: 7px 10px;
+	box-sizing: border-box;
+	margin-left: 10px;
+	position: relative;
+	top: 0;
+	transition: 0.25s;
+	border-radius: 0px
+}
+.navbarLinks:hover{
+	border-radius: 0 16px 16px 16px;
+	/*top: -2px;*/
+}
+.navbar a{
+	text-decoration: none;
+	color: white;
+	font-size: 20px;
+	position: relative;
+}
+.navbarLinks:nth-child(1){
+	margin: 0
+}

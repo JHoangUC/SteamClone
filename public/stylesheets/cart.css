@@ -1,0 +1,41 @@
+* {
+	box-sizing: border-box;
+}
+body{
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	background-color: #F7DBA7;
+	color: white;
+	box-sizing: border-box;
+	font-size: 18px;
+	height: 100vh;
+}
+#myTable{
+	padding: 8px;
+	background-color: #a87150;
+	position: relative;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+
+}
+input{
+	font-family: 'Roboto', sans-serif;
+	border: none;
+	padding: 4px;
+}
+th, td{
+	border: none;
+	border: 1px solid #fff;
+	padding: 7px;
+}
+.logo{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%,0);
+}
+#logo{
+	max-height: 250px;
+}
