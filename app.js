@@ -25,21 +25,28 @@ app.use('/views', express.static('./views'));
 app.use('/stylesheets', express.static('./public/stylesheets'));
 app.use('/images', express.static('./public/images'));
 app.use('/models', express.static('./models'));
-// app.use(express.static(path.join(__dirname, "public")));
-
-// app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(cookieParser());
-
-// app.use(session({
-//   secret: "LUp$Dg?,I#i&owP3=9su+OB%`JgL4muLF5YJ~{;t",
-//   resave: true,
-//   saveUninitialized: true
-// }));
-
-// app.use(flash());
-
-// app.use(passport.initialize());
-// app.use(passport.session());
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://jhoang:thecat123@cluster0.jgeriym.mongodb.net/?retryWrites=true&w=majority";
+const client = new MongoClient(uri, {
+	serverApi: {
+		version: ServerApiVersion,
+		strict: true,
+		deprecationErrors: true,
+	}
+});
+async function run() {
+	try {
+		// Connect the client to the server	(optional starting in v4.7)
+		await client.connect();
+		// Send a ping to confirm a successful connection
+		await client.db("admin").command({ ping: 1 });
+		console.log("Pinged your deployment. You successfully connected to MongoDB!");
+	} finally {
+		// Ensures that the client will close when you finish/error
+		await client.close();
+	}
+}
+run().catch(console.dir);
 
 app.use(routes);
 
