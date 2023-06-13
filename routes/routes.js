@@ -104,7 +104,7 @@ User.findOne({
 }, function(err, user) {
 
   if (err) {
-    return next(err);
+    return (err);
   }
   if (user) {
     return;
@@ -739,7 +739,7 @@ for (let i = 0; i < obj.length; i++) {
     game: obj[i].name
   }, function(err, game) {
     if (err) {
-      return next(err);
+      return (err);
     }
     if (game) {
       return;
