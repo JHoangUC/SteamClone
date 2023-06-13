@@ -5,7 +5,7 @@ var flash = require("connect-flash");
 var mongoose = require("mongoose");
 var passport = require("passport");
 var path = require("path");
-var session = require("express-session");
+var session = require("cookie-session");
 
 var setUpPassport = require("./setuppassport");
 
