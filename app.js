@@ -14,7 +14,7 @@ var itemRoutes = require("./routes/itemRoutes")
 var app = express();
 var User = require("./models/user");
 setUpPassport();
-mongoose.connect("mongodb://localhost:27017/steemdb");
+//mongoose.connect("mongodb://localhost:27017/steemdb");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(routes);
