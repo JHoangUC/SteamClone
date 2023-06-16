@@ -696,7 +696,8 @@ router.get("/games", function(req, res) {
 router.get("/newGame", function(req, res) {
   db.getAllObjects(res);
 });
-
+//original listings, 
+/*
 obj = [{
   game: "CSGO",
   price: 15,
@@ -734,7 +735,7 @@ obj = [{
   description: "C ool Forest Game",
   itemNumber: 6
 }]
-
+*/
 obj = [];
 for (let i = 0; i < obj.length; i++) {
   Game.findOne({
