@@ -696,7 +696,7 @@ router.get("/games", function(req, res) {
 router.get("/newGame", function(req, res) {
   db.getAllObjects(res);
 });
-/* To get this first "listing" to appear in mongo
+
 obj = [{
   game: "CSGO",
   price: 15,
@@ -718,23 +718,23 @@ obj = [{
 }, {
   game: "Rocket League",
   price: 20,
-  picture: "/public/images/rocketleague.jpg",
+  picture: "/public/images/RocketLeague.jpg",
   description: "Cool Car Game",
   itemNumber: 4
 }, {
   game: "StarDew Valley",
   price: 15,
-  picture: "/public/images/stardewvalley.jpg",
+  picture: "/public/images/StarDewValley.jpg",
   description: "Cool Farm Game",
   itemNumber: 5
 }, {
   game: "The Forest",
   price: 25,
-  picture: "/public/images/theforest.jpg",
+  picture: "/public/images/TheForest.jpg",
   description: "C ool Forest Game",
   itemNumber: 6
 }]
-*/
+
 obj = [];
 for (let i = 0; i < obj.length; i++) {
   Game.findOne({
