@@ -524,16 +524,16 @@ router.get("/getRequest/:username", function(req, res) {
       //     }
       // }
 
-      let objs = [];
+      let objss = [];
       for (let i = 0; i < user.request.length; i++) {
         // console.log(user.request[i]);
         // console.log(user[i].request);
 
-        objs.push({
+          objss.push({
           username: user.request[i]
         });
       }
-      return res.json(objs);
+        return res.json(objss);
     }
   });
 });
@@ -696,7 +696,7 @@ router.get("/games", function(req, res) {
 router.get("/newGame", function(req, res) {
   db.getAllObjects(res);
 });
-
+/* To get this first "listing" to appear in mongo
 obj = [{
   game: "CSGO",
   price: 15,
@@ -731,9 +731,11 @@ obj = [{
   game: "The Forest",
   price: 25,
   picture: "/public/images/theforest.jpg",
-  description: "Cool Forest Game",
+  description: "C ool Forest Game",
   itemNumber: 6
 }]
+*/
+obj = [];
 for (let i = 0; i < obj.length; i++) {
   Game.findOne({
     game: obj[i].name

@@ -3,3 +3,7 @@ $('body').keydown( function( event ) {
       $('form').submit()
     }
 });
+function loginClicked() {
+   
+    $('form').submit()
+}

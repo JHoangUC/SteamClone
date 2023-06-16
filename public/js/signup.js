@@ -35,3 +35,8 @@ $('body').keydown( function( event ) {
       $('form').submit()
     }
 });
+
+function signupClicked() {
+	
+	$('form').submit()
+}
