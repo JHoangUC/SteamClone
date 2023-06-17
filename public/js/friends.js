@@ -6,10 +6,10 @@ function AddClicked(){
 		$.ajax({
 			url: "/requestFriend/" + $("#friend").val(),
 			type: "PUT",
-			success: function(data){
-				if (data == "sent already"){
+			success: function (data) {
+					if (data == "sent already"){
 						alert($("#friend").val() + " has already been sent  friend request");
-						console.log("666");
+						
 					}
 					else if(data == "yourself")
 					{
@@ -22,10 +22,10 @@ function AddClicked(){
 					else if(!data){
 						alert($("#friend").val() + " does not exist")
 					}
-				else {
-						alert(data + "has been sent a friend request");
+					else {
+						alert(data + " has been sent a friend request");
 						location.reload();
-						console.log("hello2222");
+						
 					}
 
 
@@ -63,7 +63,7 @@ $.ajax({
 			 else{
 
 			 remove(friend);
-
+			 location.reload();
 
 }
 	 },
@@ -115,7 +115,7 @@ $(document).ready(function(){
 							+	'<input id = "decline" type="button" value="decline" friend ="'+data[i].username+'">'
 								+"</br>");
 	 	          }
-
+					  
 	 	          }
 
 

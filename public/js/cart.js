@@ -9,8 +9,11 @@ function cartClicked(itemNum,price){
               if(!data){
                 alert ("Please log in");
               }
-              else if(data == "already"){
+              else if (data == "already") {
+                  alert("This item is already in the cart")
               }
+              
+                  alert("Item added!")
 
             },
             dataType: "json"

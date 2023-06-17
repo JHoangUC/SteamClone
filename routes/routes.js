@@ -406,6 +406,7 @@ router.post('/cart', function(req, res) {
       //  return res.json(temp);
 
       //});
+        return res.json(obj)
     });
     //return res.json(db3.addObject(obj));
 
