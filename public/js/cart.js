@@ -5,14 +5,14 @@ function cartClicked(itemNum,price){
             type: "POST",
             data: {title: itemNum, price: price},
             success: function(data){
-              console.log(data + " post success");
+              console.log(JSON.stringify(data) + " post success");
               if(!data){
                 alert ("Please log in");
               }
-              else if (data == "already") {
+              else if (data === itemNum) {
                   alert("This item is already in the cart")
               }
-              
+              else
                   alert("Item added!")
 
             },

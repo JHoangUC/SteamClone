@@ -369,24 +369,38 @@ router.post('/cart', function(req, res) {
   User.findOne({
     username: req.user.username
   }, function(err, user) {
-    for (var i = 0; i < user.cart.length; i++) {
-      if (user.cart[i] == req.body.title) {
-        return res.json("already")
+      for (var i = 0; i < user.cart.length; i++) {
+        if (user.cart[i].name === req.body.title) {
+            
+            return res.json(user.cart[i].name)
       }
     }
-
+   
       var obj = { name: req.body.title,  price: req.body.price};
     User.findOneAndUpdate({
       username: req.user.username
     }, {
-      $push: {
-            cart: obj
-           
-      }
+        
+            $push: {
+                cart: obj
+
+            }
+        
     }, function(error, user) {
       if (error) {
         return res.json(null)
-      }
+        }
+        console.log(user.cart.length);
+        for (let i = 0; i < user.cart.length; i++) {
+            console.log(" SECOND cart " + user.cart[i].name + " req " + req.body.title + " body " + JSON.stringify(req.body));
+            if (user.cart[i].name == req.body.title) {
+                console.log("FindOne /cart POST");
+                return res.json(null)
+            }
+            else {
+                return res.json(obj)
+            }
+        }
         // this was to add a price into the database for cart. No longer needed see above
       //User.findOneAndUpdate({
       //  username: req.user.username
@@ -406,7 +420,7 @@ router.post('/cart', function(req, res) {
       //  return res.json(temp);
 
       //});
-        return res.json(obj)
+    
     });
     //return res.json(db3.addObject(obj));
 
