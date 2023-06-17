@@ -375,36 +375,37 @@ router.post('/cart', function(req, res) {
       }
     }
 
-    //var obj = {name:req.body.itemName, index: req.body.index, price: req.body.price,username:req.session_state.username};
+      var obj = { name: req.body.title,  price: req.body.price};
     User.findOneAndUpdate({
       username: req.user.username
     }, {
       $push: {
-        cart: req.body.title
+            cart: obj
+           
       }
     }, function(error, user) {
       if (error) {
         return res.json(null)
       }
+        // this was to add a price into the database for cart. No longer needed see above
+      //User.findOneAndUpdate({
+      //  username: req.user.username
+      //}, {
+      //  $push: {
+      //    price: req.body.price
+      //  }
+      //}, function(error, user) {
+      //  if (error) {
+      //    return res.json(null)
+      //  }
+      //  var temp = [{
+      //    title: req.body.title,
+      //    price: req.body.price
+      //  }];
 
-      User.findOneAndUpdate({
-        username: req.user.username
-      }, {
-        $push: {
-          price: req.body.price
-        }
-      }, function(error, user) {
-        if (error) {
-          return res.json(null)
-        }
-        var temp = [{
-          title: req.body.title,
-          price: req.body.price
-        }];
+      //  return res.json(temp);
 
-        return res.json(temp);
-
-      });
+      //});
     });
     //return res.json(db3.addObject(obj));
 
@@ -421,22 +422,51 @@ router.get('/cart2', function(req, res) {
       console.log(err)
     }
     var temp = [];
-    for (var i = 0; i < user.cart.length; i++) {
+      for (var i = 0; i < user.cart.length; i++) {
+        
       temp.push({
-        title: user.cart[i],
-        price: user.price[i]
+        title: user.cart[i].name,
+        price: user.cart[i].price
       })
     }
     return res.json(temp)
   });
+});
 
+
+router.delete('/deleteCart/:title', function (req, res) {
+console.log(JSON.stringify(req.params))
+    User.findOneAndUpdate ({
+        username: req.user.username
+    }, {
+        $pull: {
+            cart: {
+                name: req.params.title
+            }
+        
+        }
+    }, function (error, removed) {
+        if (error) {
+            console.log("error");
+        }
+
+        var temp = [];
+        for (var i = 0; i < removed.cart.length; i++) {
+
+            if (req.params.title === removed.cart[i].name) {
+                temp.push({
+                    title: removed.cart[i].name,
+                    price: removed.cart[i].price
+                })
+            }
+        }
+        return res.json(temp);
+    });
 
 });
-router.delete('/cart', function(req, res) {
 
 
-  res.json(db3.deleteObjectWithID(req.body.index));
-});
+
 /////////////////////////////////////////////
 router.delete('/deleteLogin/:username', function(req, res) {
 

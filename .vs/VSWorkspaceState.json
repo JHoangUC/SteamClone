@@ -8,6 +8,6 @@
     "\\routes",
     "\\views"
   ],
-  "SelectedNode": "\\views\\homepage.ejs",
+  "SelectedNode": "\\public\\stylesheets\\homepage.css",
   "PreviewInSolutionExplorer": false
 }

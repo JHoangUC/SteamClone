@@ -19,24 +19,24 @@ function cartClicked(itemNum,price){
 
         return false;
 }
-var id = 0;
-function deleteClicked(itemNum){
-          $.ajax({
-            url: "/cart",
-            type: "DELETE",
-            data: {index: itemNum},
-            success: function(data){
-              console.log(JSON.stringify(data));
 
-},
-            dataType: "json"
-          });
+function deleteClicked(name) {
+ 
 
+    $.ajax({
+        url: "/deleteCart/" + name,
+        type: "DELETE",
+        success: function (data) {
+            if (!data) {
+                console.log("Error Delete Clicked");
+            }
 
-        return false;
+        },
+        dataType: "json"
+    });
 }
-
-function htmlClicked(itemNum){
+var id = 0;
+function htmlClicked(){
 
 $.ajax({
   url: "/cart2",
@@ -52,7 +52,7 @@ $.ajax({
       }
 
       else {
-        $('#myTable').append('<tr class="tablerows" itemNumber="' + data[i].index+ '"><tbody><td>' + data[i].title + '</td>><td>' + data[i].price + '</td><td>' + '<input type="number" class="quant" itemNumber = "' + data[i].index + '" value="1" min="1" />' + '</td><td>' + '<div class="delete" style="height: 21px; width: 54px; background-color: red;" itemNumber = "' + data[i].index + '"></div>' + '</td></tbody></tr>' );
+        $('#myTable').append('<tr class="tablerows" itemNumber="' + data[i].index+ '"><tbody><td>' + data[i].title + '</td>><td>' + data[i].price + '</td><td>' + '<input type="number" class="quant" itemNumber = "' + data[i].index + '" value="1" min="1" />' + '</td><td>' + '<button class="delete"  style="height: 21px; width: 54px; background-color: red;" itemTitle = "' + data[i].title + '"></button>' + '</td></tbody></tr>' );
       }
     }
 
@@ -66,30 +66,35 @@ return false;
 }
 
 
-
 var itemN;
 var price;
-      //$(".cartButton").click(function(){
+
         $(document).on("click",".cartButton", function(){
         console.log("cart button was clicked");
-   itemN = $(this).attr('itemTitle');
-   price = $(this).attr('price');
-  cartClicked(itemN,price);
+        itemN = $(this).attr('itemtitle');
+             price = $(this).attr('price');
+            console.log(itemN);
+            cartClicked(itemN, price);
 
-});
+         
+
+        });
+
+
 //////////If the html = /cart then do the below
 if (window.location.href.match('/cart') != null) {
+    
+    htmlClicked();
+   
+    $(document).on('click', '.delete', function (){
+        console.log("Delete button was clicked");
+        itemN = $(this).attr('itemtitle');     
+        deleteClicked(itemN, price);
+    });
 
-   htmlClicked(itemN);
-$(document).on('click', '.delete', function (){
+    $("#myTable").on('click', '.delete', function (e){
+      e.preventDefault();
 
-  var itemNum = $(this).attr('itemNumber');
-  deleteClicked(itemNum);
-});
-
-$("#myTable").on('click', '.delete', function (e){
-  e.preventDefault();
-
-  $(this).parents( "tr" ).remove();
-});
+      $(this).parents( "tr" ).remove();
+    });
  }
