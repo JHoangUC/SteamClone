@@ -365,13 +365,13 @@ router.get("/cart", function(req, res) {
   }
 });
 router.post('/cart', function(req, res) {
-
+    let quantity = 1;
   User.findOne({
     username: req.user.username
   }, function(err, user) {
       for (var i = 0; i < user.cart.length; i++) {
         if (user.cart[i].name === req.body.title) {
-            
+            quantity += 1;
             return res.json(user.cart[i].name)
       }
     }
