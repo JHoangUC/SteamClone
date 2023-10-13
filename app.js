@@ -26,7 +26,7 @@ app.use('/stylesheets', express.static('./public/stylesheets'));
 app.use('/images', express.static('./public/images'));
 app.use('/models', express.static('./models'));
 //const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb://john:pass@ac-9pynx6d-shard-00-00.rhajkiv.mongodb.net:27017,ac-9pynx6d-shard-00-01.rhajkiv.mongodb.net:27017,ac-9pynx6d-shard-00-02.rhajkiv.mongodb.net:27017/?ssl=true&replicaSet=atlas-xtzhz5-shard-0&authSource=admin&retryWrites=true&w=majority";
+const uri = "mongodb://john:pass@ac-9pynx6d-shard-00-00.rhajkiv.mongodb.net:27017,ac-9pynx6d-shard-00-01.rhajkiv.mongodb.net:27017,ac-9pynx6d-shard-00-02.rhajkiv.mongodb.net:27017/?ssl=true&replicaSet=atlas-xtzhz5-shard-0&authSource=test&retryWrites=true&w=majority";
 
 mongoose.connect(uri);
 //const client = new MongoClient(uri, {
