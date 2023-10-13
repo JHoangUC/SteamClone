@@ -26,7 +26,8 @@ app.use('/stylesheets', express.static('./public/stylesheets'));
 app.use('/images', express.static('./public/images'));
 app.use('/models', express.static('./models'));
 //const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://jhoang:thecat123@cluster0.jgeriym.mongodb.net/test?retryWrites=true&w=majority";
+const uri = "mongodb+srv://jhoang:pass@cluster0.rhajkiv.mongodb.net/?retryWrites=true&w=majority";
+
 mongoose.connect(uri);
 //const client = new MongoClient(uri, {
 //	serverApi: {
