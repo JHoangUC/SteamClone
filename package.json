@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GitPlebeian/steem.git"
+    "url": "git+https://github.com/JHoangUC/SteamClone"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/GitPlebeian/steem/issues"
   },
-  "homepage": "https://github.com/GitPlebeian/steem#readme",
+  "homepage": "https://github.com/JHoangUC/SteamClone",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
