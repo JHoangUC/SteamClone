@@ -9,18 +9,18 @@ var session = require("express-session");
 var bodyParser = require('body-parser')
 var cookieParser = require("cookie-parser");
 var formidable = require('formidable');
-var fs = require('fs');
+const fs = require('fs');
 var itemNumber = 10;
 var data = require('../mongo')
-
 var app = express();
 var router = express.Router();
 router.use(flash());
 var User = require("../models/games");
+const { log } = require('console');
 
 let db = new data();
 
-console.log("hek shroud");
+
 
 router.get("/games", function(req, res) {
     res.render('addObject');
@@ -35,43 +35,31 @@ router.get('/getItems',function(req,res){
 });
 
 router.post('/fileupload', function(req, res){
-
+    console.log("POSTING")
     var form = new formidable.IncomingForm();
+
     form.parse(req, function (err, fields, files) {
     var oldpath = files.filetoupload.path;
-    var newpath = __dirname + '/public/images/' + files.filetoupload.name;
-    var picturei =  '/public/images/' + files.filetoupload.name;
-
+   // var newpath = __dirname + '/public/images/' + files.filetoupload.name;
+   // var picturei =  '/public/images/' + files.filetoupload.name;
+    var newpath = path.join(__dirname + '/public/images/') + files.filetoupload.name;
+    let rawData = fs.readFileSync(oldpath)
     // console.log('in post ' + fields.name + ' ' + fields.price + ' ' + fields.description + ' ' + picturei);
-
+      console.log(newpath + " this is new path")
+      console.log(oldpath + " this is old path")
+      console.log(rawData + " this is rawData")
      db.addObject({name:fields.name,price:fields.price,picture:picturei,description:fields.description,number:itemNumber});
      itemNumber++;
-    fs.rename(oldpath, newpath, function (err) {
-    if (err) throw err;
-        res.redirect("/");
-      });
-    });
+     fs.writeFile(newpath, rawData, function(err){
+      if(err) console.log(err)
+      return res.send("successfully uploaded")
+     })
+    // fs.rename(oldpath, newpath, function (err) {
+    // if (err) throw err;
+    //     res.redirect("/");
+    //   });
+     });
 });
 
-// obj = [{description: "asdfpijapfoijpsadofji", itemname}]
-// for()
-// User.findOne({ username: obj[i].itemname }, function(err, user) {
 
-//     if (err) { return next(err); }
-//     if (user) {
-//       return;
-//     }
-// console.log("post signup1");
-    
-//     var newUser = new User({
-//       username: obj[i].itemname,
-//       password: "shroud",
-//       admin: true
-//     });
-
-//     newUser.save();  
-
-
-//   });
 module.exports = router;
-

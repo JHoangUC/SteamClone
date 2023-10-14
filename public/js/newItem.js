@@ -1,4 +1,3 @@
-
 function successChange(data) {
   if (!data)
     alert("ERROR");
@@ -14,11 +13,12 @@ function readURL(e) {
         $(reader).on('load', function(e) { 
           localStorage.setItem("recent-image", e.target.result);  
           const recentImage = localStorage.getItem("recent-image")
+
           $('#preview').attr('src', recentImage); 
           $('#img').attr('src', e.target.result); 
+
           
         });
-
         reader.readAsDataURL(this.files[0]);
     }
 }

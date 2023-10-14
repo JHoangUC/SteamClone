@@ -6,7 +6,7 @@ var mongoose = require("mongoose");
 var passport = require("passport");
 var path = require("path");
 var session = require("cookie-session");
-
+var fs = require("fs");
 var setUpPassport = require("./setuppassport");
 
 var routes = require("./routes/routes")
@@ -29,30 +29,13 @@ app.use('/models', express.static('./models'));
 const uri = "mongodb+srv://john:pass@cluster0.rhajkiv.mongodb.net/test?retryWrites=true&w=majority";
 
 mongoose.connect(uri);
-//const client = new MongoClient(uri, {
-//	serverApi: {
-//		version: ServerApiVersion,
-//		strict: true,
-//		deprecationErrors: true,
-//	}
-//});
-//async function run() {
-//	try {
-//		// Connect the client to the server	(optional starting in v4.7)
-//		await client.connect();
-//		// Send a ping to confirm a successful connection
-//		await client.db("test").command({ ping: 1 });
-//		console.log("Pinged your deployment. You successfully connected to MongoDB!");
-//	} finally {
-//		// Ensures that the client will close when you finish/error
-//		await client.close();
-//	}
-//}
-//run().catch(console.dir);
+
 
 app.use(routes);
 
 app.set("view engine", "ejs");
+
+
 
 var port = process.env.PORT || 3000;
 var server = app.listen(port,function(){

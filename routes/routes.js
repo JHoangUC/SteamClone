@@ -812,12 +812,15 @@ router.post('/fileupload', function(req, res) {
   var form = new formidable.IncomingForm();
   form.parse(req, function(err, fields, files) {
     var oldpath = files.filetoupload.path;
+    let rawData = fs.readFileSync(oldpath)
     var newDir = __dirname;
     var newDir1 = newDir.search("routes");
     var newDir2 = __dirname.slice(0, newDir1 - 1);
     var newpath = newDir2 + '/public/images/' + files.filetoupload.name;
     var picturei = '/public/images/' + files.filetoupload.name;
-
+    console.log(newpath + " this is new path")
+    console.log(oldpath + " this is old path")
+    console.log(rawData + " this is rawData")
     console.log('in post ' + fields.name + ' ' + fields.price + ' ' + fields.description + ' ' + picturei + itemNumber);
 
     if(fields.description.includes('<script') || fields.name.includes('<script')){
@@ -832,10 +835,15 @@ router.post('/fileupload', function(req, res) {
       itemNumber: itemNumber
     }, res);
     itemNumber++;
-    fs.rename(oldpath, newpath, function() {
-      if (err) throw err;
-      res.redirect("/");
-    });
+    //BEFORE FS.WRITEFILE
+    // fs.rename(oldpath, newpath, function() {
+    //   if (err) throw err;
+    //   res.redirect("/");
+    // });
+    fs.writeFile(newpath, rawData, function(err){
+      if(err) console.log(err)
+      return res.redirect("/")
+     })
   });
 });
 
