@@ -742,7 +742,7 @@ router.get("/newGame", function(req, res) {
   db.getAllObjects(res);
 });
 //original listings, 
-/*
+
 obj = [{
   game: "CSGO",
   price: 15,
@@ -777,10 +777,10 @@ obj = [{
   game: "The Forest",
   price: 25,
   picture: "/public/images/TheForest.jpg",
-  description: "C ool Forest Game",
+  description: "Cool Forest Game",
   itemNumber: 6
 }]
-*/
+
 obj = [];
 for (let i = 0; i < obj.length; i++) {
   Game.findOne({
