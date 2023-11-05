@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/table.css">
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-git.js"></script>
+    <script src="/js/table.js"></script>
+  </head>
+  <body>
+    <div class="topnav">
+  <a class="active" href="/peProject">Home</a>
+  <a id="changeLink" href="https://docs.google.com/spreadsheets/d/1pWBUzqZ3Vbj2ePmN8Nn5QQOHLnIOt-8YkBgpXfQWSLs/edit?usp=sharing" target="_blank">Google Sheets</a>
+  <a  href="table.html" target="_blank">Info</a>
+  <a  onclick="$('#adminID').show()">Settings</a>
+  <div class="search-container">
+  </div>
+  </div>
+
+
+
+  <input type="button" class="button"  name="teacher" id="fin" value="Findell">
+    <input type="button" class="button" name="teacher" id="mur" value="Murdoch">
+      <input type="button" class="button"  name="teacher" id="rap" value="Raphael">
+        <input type="button" class="button" name="teacher" id="gut" value="Gutierrez">
+
+        <!-- <input type="button" class="period"  name="period" id="p1" value="Period 1">
+          <input type="button" class="period" name="period" id="p2" value="Period 2">
+            <input type="button" class="period"  name="period" id="p3" value="Period 3">
+              <input type="button" class="period" name="period" id="p4" value="Period 4"> -->
+              <form class=""action="#" id="selectPeriod">
+
+
+              <label class="container">Period 1
+                <input type="radio" checked="checked" name="period" id="Period1" value="1">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Period 2
+                <input type="radio" name="period" id="Period2" value="2">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Period 3
+                <input type="radio" name="period" id="Period3" value="3">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Period 4
+                <input type="radio" name="period" id="Period4"
+                value="4">
+                <span class="checkmark"></span>
+              </label>
+            </form>
+<div id="teacherTable">
+
+
+    <table id="Findell" style="display: none">
+      <thead>
+        <tr>
+          <th> Teacher </th>
+          <th> Period </th>
+          <th> RollCallNumber </th>
+          <th> Laps </th>
+          <th> Total Time </th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+        <!-- /////////////////////////////////////////////////////// -->
+    <table id="Murdoch" style="display: none">
+      <thead>
+        <tr>
+          <th> Teacher </th>
+          <th> Period </th>
+          <th> RollCallNumber </th>
+          <th> Laps </th>
+          <th> Total Time </th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+    <!-- /////////////////////////////////////////////////////// -->
+    <table id="Raphael" style="display: none">
+      <thead>
+        <tr>
+          <th> Teacher </th>
+          <th> Period </th>
+          <th> RollCallNumber </th>
+          <th> Laps </th>
+          <th> Total Time </th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+        <!-- /////////////////////////////////////////////////////// -->
+    <table id="Gutierrez" style="display: none">
+      <thead>
+        <tr>
+          <th> Teacher </th>
+          <th> Period </th>
+          <th> RollCallNumber </th>
+          <th> Laps </th>
+          <th> Total Time </th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+</div>
+  </body>
+</html>

@@ -1,0 +1,167 @@
+.button {
+  background-color: #006535; /* Green */
+  border: 1px;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+
+  justify-content: center;
+  display: inline;
+  font-size: 16px;
+}
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.period {
+  background-color: #006535; /* Green */
+  border: 1px;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  float: right;
+  justify-content: center;
+  display: inline;
+  font-size: 16px;
+}
+.period:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+/* /////////////////////////////////////////////////////////////////////////////////// */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+/* /////////////////////////////////////////////////////////////////////////////////// */
+table {
+  border-collapse: collapse;
+  width: 30%;
+  position: absolute;
+  top: 50%;
+ left: 35%;
+ /* transform: translate(-50%,-50%) */
+}
+table {
+    background-color: #aaa;
+    border: 2px;
+}
+/* ////////////////////////////////////////////////////////////////////// */
+#header h1{
+    margin:0px;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #006535;
+
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+
+  float: left;
+  margin: 0;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the "active" element to highlight the current page */
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+/* Style the search box inside the navigation bar */
+.topnav input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+  .topnav a, .topnav input[type=text] {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;
+  }
+}
+body {
+  margin: 0;
+  background-color: #e0e0e0 ;
+}
