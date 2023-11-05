@@ -1,17 +1,17 @@
-let myDatabase = function() {
+let myDatabases = function() {
 	this.infoList = [];
 	this.coolDown = 0;
 }
 
-myDatabase.prototype.getArraySize = function() {
+myDatabases.prototype.getArraySize = function() {
 	return this.infoList.length;
 }
 
 //add or modify.  Complete getAllObjects function.
-myDatabase.prototype.getAllObjects = function() {
+myDatabases.prototype.getAllObjects = function() {
 	return(this.infoList);
 	}
-	myDatabase.prototype.getAllObjectsName = function(index) {
+	myDatabases.prototype.getAllObjectsName = function(index) {
 			for (let i=0;i<this.infoList.length;i++) {
 				if(this.infoList[i].index == index){
 						console.log(JSON.stringify(this.infoList[i]) + " getAllObjectsName");
@@ -21,7 +21,7 @@ myDatabase.prototype.getAllObjects = function() {
 		return;
 		}
 
-myDatabase.prototype.getAllNames = function() {
+myDatabases.prototype.getAllNames = function() {
 	let names = [];
 	for (let i=0;i<this.infoList.length;i++) {
 		if (this.infoList[i]) {
@@ -31,7 +31,7 @@ myDatabase.prototype.getAllNames = function() {
 	return(names);
 }
 
-myDatabase.prototype.getObjectAtIndex = function(index) {
+myDatabases.prototype.getObjectAtIndex = function(index) {
 	if (index < 0)
 		return (null);
 	else {
@@ -43,7 +43,7 @@ myDatabase.prototype.getObjectAtIndex = function(index) {
 	}
 }
 
-myDatabase.prototype.getObjectWithID = function(ident) {
+myDatabases.prototype.getObjectWithID = function(ident) {
 	for (let i=0;i<this.infoList.length;i++) {
 		if (this.infoList[i] && ident == this.infoList[i].teacher)
 		{
@@ -53,7 +53,7 @@ myDatabase.prototype.getObjectWithID = function(ident) {
 	}
 	return (null);
 }
-myDatabase.prototype.getAllObjectWithID = function(ident,period) {
+myDatabases.prototype.getAllObjectWithID = function(ident,period) {
 	console.log(this.infoList);
 	console.log(this.infoList.length);
 	console.log("database " + ident);
@@ -69,7 +69,7 @@ myDatabase.prototype.getAllObjectWithID = function(ident,period) {
 	return(data);
 }
 
-myDatabase.prototype.addObjectAtIndex = function(obj,index) {
+myDatabases.prototype.addObjectAtIndex = function(obj,index) {
 	if (index < 0)
 		return (null);
 	if (index < this.infoList.length)
@@ -88,7 +88,7 @@ myDatabase.prototype.addObjectAtIndex = function(obj,index) {
 }
 
 
-myDatabase.prototype.addObject = function(obj) {
+myDatabases.prototype.addObject = function(obj) {
 	for (let i=0;i<this.infoList.length;i++) {
 		if (this.infoList[i] && obj.roll == this.infoList[i].roll && obj.teacher == this.infoList[i].teacher && obj.period == this.infoList[i].period){
 
@@ -122,7 +122,7 @@ myDatabase.prototype.addObject = function(obj) {
 
 
 
-myDatabase.prototype.changeObjectAtIndex = function(obj,index) {
+myDatabases.prototype.changeObjectAtIndex = function(obj,index) {
 	if (index < 0 || index >= this.infoList.length)
 	if (!this.infoList[index])
 		return (null);
@@ -131,7 +131,7 @@ myDatabase.prototype.changeObjectAtIndex = function(obj,index) {
 }
 
 //add or modify.  Complete changeObject function.
-myDatabase.prototype.changeObject = function(obj) {
+myDatabases.prototype.changeObject = function(obj) {
 	for(var i=0;i<this.infoList.length;i++){
 		if(obj.username == this.infoList[i].username){
 			console.log(JSON.stringify(this.infoList[i]) + " before");
@@ -144,7 +144,7 @@ myDatabase.prototype.changeObject = function(obj) {
 	return (null);
 }
 
-myDatabase.prototype.deleteObjectAtIndex = function(index) {
+myDatabases.prototype.deleteObjectAtIndex = function(index) {
 	if (index < 0 || index >= this.infoList.length) {
 		return(null);
 	} else {
@@ -157,13 +157,13 @@ myDatabase.prototype.deleteObjectAtIndex = function(index) {
 		}
 	}
 }
-myDatabase.prototype.setCoolDown = function(index) {
+myDatabases.prototype.setCoolDown = function(index) {
 	this.coolDown = index.index;
 }
 
 
 //add or modify.  Complete deleteObjectWithID function.
-myDatabase.prototype.deleteObjectWithID = function(ident) {
+myDatabases.prototype.deleteObjectWithID = function(ident) {
 	for(var i=0;i<this.infoList.length;i++){
 	if(this.infoList[i].ident == ident){
 		this.infoList[i].ident = undefined;
@@ -175,4 +175,4 @@ myDatabase.prototype.deleteObjectWithID = function(ident) {
 }
 
 
-module.exports = myDatabase;
+module.exports = myDatabases;

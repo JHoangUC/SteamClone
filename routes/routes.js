@@ -9,7 +9,7 @@ var session = require("express-session");
 var bodyParser = require('body-parser')
 var formidable = require('formidable');
 var cookieParser = require("cookie-parser");
-const myDatabase = require('./myDatabase');
+const myDatabase = require('../myDatabase');
 
 var itemNumber = 7;
 var fs = require('fs');
@@ -48,12 +48,12 @@ router.use(cookieParser());
 router.use(passport.initialize());
 router.use(passport.session());
 /////////ROUTES FOR PE PROJECT
-router.get("/",function(request,response){
-	response.sendFile(__dirname + "/public/views/peHomepage.html");
-});
-router.get("/table",function(request,response){
-	response.sendFile(__dirname + "/public/views/table.html");
-});
+// router.get("/peProject",function(request,response){
+// 	response.sendFile(__dirname + "/public/views/peHomepage.html");
+// });
+// router.get("/table",function(request,response){
+// 	response.sendFile(__dirname + "./public/views/table.html");
+// });
 
 /////////ROUTES FOR STEAM CLONE
 router.get("/successroot", function(req, res) {
@@ -101,14 +101,11 @@ router.get("/", function(req, res, next) {
   console.log("get root");
   res.render('homepage');
 })
-//  // User.find()
-//  // .sort({ createdAt: "descending" })
-//  // .exec(function(err, users) {
-//  //   if (err) { return next(err); }
-//  //   res.render("index", { users: users });
-//  // });
-// });
+
+
 ///Calling local database PeProject
+//const myDatabase = require('./myDatabase');
+
 let db2 = new myDatabase();
 router.get('/readData', function (req, res) {
 console.log(req.query.period + " period");
@@ -162,8 +159,12 @@ router.get("/friends", function(req, res) {
   } else {
     res.render('friends')
   }
-
-
+});
+router.get("/peProject", function(req, res) {
+  res.render('peHomepage')
+});
+router.get("/table", function(req, res) {
+  res.render('table')
 });
 router.get("/cart", function(req, res) {
   console.log("get cart");
@@ -172,8 +173,6 @@ router.get("/cart", function(req, res) {
   } else {
     res.render('cart')
   }
-
-
 });
 
 router.get("/signup", function(req, res) {
