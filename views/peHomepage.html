@@ -1,0 +1,139 @@
+ <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+      <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css">
+      <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+      <!-- <script src="https://code.jquery.com/jquery-git.js"></script> -->
+      <script src="js/PeHomepage.js"></script>
+  </head>
+
+  <body>
+    <div class="topnav">
+  <a class="active" href="/peProject">Home</a>
+  <a id="changeLink" href="https://docs.google.com/spreadsheets/d/1pWBUzqZ3Vbj2ePmN8Nn5QQOHLnIOt-8YkBgpXfQWSLs/edit?usp=sharing" target="_blank">Google Sheets</a>
+  <a  href="views/table.html" target="_blank" >Info</a>
+  <a   href="views/admin.html">Settings</a>
+  <div class="search-container">
+
+
+
+  </div>
+</div>
+
+    <label for="" style ="position: absolute; top: 38%;
+   left: 50%; transform: translate(-50%,-50%)"> <font size="10"> Scan Here: </font> </label>
+    <input type="text" id = "id" name="" value="" style =" font-size: 40px; position: absolute; top: 45%;
+   left: 50%; transform: translate(-50%,-50%);height:50px;width:200px;">
+
+   <!-- ///////////////////////////////////////////////////////////////////////////////////// -->
+
+<div class="container">
+	<!-- time to add the controls -->
+	<input id="start"  onclick="startCount()" name="controls" class="buttonTimer" type="radio" />
+	<input id="stop" onclick="stopCount()"name="controls" class="buttonTimer" type="radio" />
+	<input id="reset"onclick="resetCount()" name="controls" class="buttonTimer" type="radio" />
+  <br>
+  <p id="timermatch"></p>
+	<div class="timer" >
+
+
+		<!-- <div class="cell">
+			<div class="numbers tenhour moveten"style="color:black">0 1 2 3 4 5 6 7 8 9</div>
+		</div> -->
+		<div class="cell">
+			<div id="hour" class="numbers hour moveten" style="color:black">0 1 2 3 4 5 6 7 8 9</div>
+		</div>
+		<div class="cell divider"><div class="numbers"style="color:black">:</div></div>
+		<div class="cell">
+			<div id="tenminute"class="numbers tenminute movesix" style="color:black">0 1 2 3 4 5 6</div>
+		</div>
+		<div class="cell">
+			<div id="minute" class="numbers minute moveten" style="color:black">0 1 2 3 4 5 6 7 8 9</div>
+		</div>
+		<div class="cell divider"><div class="numbers" style="color:black">:</div></div>
+		<div class="cell">
+			<div id="tensecond" class="numbers tensecond movesix" style="color:black">0 1 2 3 4 5 6</div>
+		</div>
+		<div class="cell">
+			<div id="onesecond" class="numbers second moveten" style="color:black">0 1 2 3 4 5 6 7 8 9</div>
+		</div>
+		<div class="cell divider"><div class="numbers" style="color:black">:</div></div>
+		<div class="cell">
+			<div id="milisecond"class="numbers milisecond moveten"style="color:black">0 1 2 3 4 5 6 7 8 9</div>
+		</div>
+		<div class="cell">
+			<div id="tenmilisecond"class="numbers tenmilisecond moveten"style="color:black">0 1 2 3 4 5 6 7 8 9</div>
+		</div>
+		<!-- <div class="cell">
+			<div class="numbers hundredmilisecond moveten"style="color:black">0 1 2 3 4 5 6 7 8 9</div>
+		</div> -->
+	</div>
+	<!-- Lables for the controls -->
+	<div id="timer_controls">
+		<label for="start">Start</label>
+		<label for="stop">Stop</label>
+		<label for="reset">Reset</label>
+	</div>
+</div>
+
+<!-- //////////////////////////////////////////////////////////// -->
+<div id="adminID"class="admin" style="display: none">
+  Password:
+  <input id="password" type="password" name="password" value="">
+  <input id="passwordButton" type="button" name="passwordButton" value="Check Password" onclick="checkPass()">
+</div>
+<div id="secret" style="display: none">
+      <br>
+      Time before you can scan again
+      <input id="cooldown" type="text" name="" value=""><br><br>
+      Change link for teacher's google sheet:
+      <input type="text" id="sheet" name="" placeholder="Change Sheet's Link">
+
+      <!-- Add that here cuz it already exists --><br><br>
+      <input id="submitButton" type="button" name="button" value="Submit" onclick="submitCool()">
+      <input id="cool" type="button" name="yee" value="cool" onclick="cool()">
+    </div>
+
+<!-- //////////////////////////////////////////////////////////// -->
+</body>
+</html>
+   <!-- <label style = " position: absolute; top: 10%; left: 85%;  transform: translate(-50%,-50%)"> <font size="10" color="Black"> Recent Scans </font></label> -->
+
+   <br>
+       <!-- /////////////////////////////////////////////////////// -->
+    <table id="showData">
+      <thead>
+        <tr>
+          <th> Teacher </th>
+          <th> Period </th>
+          <th> RollCallNumber </th>
+          <th> Laps </th>
+          <th> Total Time </th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+
+    <br>
+    <br>
+    <br>
+
+
+     <img src="images/MVHSLogo.gif" alt="" style ="position: absolute; top: 20%;
+    left: 50%; transform: translate(-50%,-50%)">
+  </body>
+</html>
+
+
+<script>
+
+
+
+
+
+</script>
